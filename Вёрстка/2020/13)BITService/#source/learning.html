@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Настройка viewport -->
+    <title>BITService</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include("_header.html")
+        <!-- _______________________Основа сайта_______________________ -->
+        <section class="learning">
+            <div class="container">
+                <div class="learning__wrapper wrap wrap__class">
+                    <h2 class="title">Обучение</h2>
+                    <div class="learning__row">
+                        <div class="learning__item">
+                            <div class="learning__image ">
+                                <a href="buy.html"><img src="img/learning2.jpg" alt="image"></a>
+                                <a href="buy.html">
+                                    <div class="learning__text1">Купить BTC</div>
+                                    <div class="learning__text2">без комиссии</div>
+                                </a>
+                            </div>
+                            <a href="buy.html" class="learning__btn">Подробное руководство</a>
+                        </div>
+                         <div class="learning__item">
+                             <div class="learning__image">
+                                 <a href="btc.html"><img src="img/learning1.jpg" alt="image"></a>
+                                 <a href="btc.html">
+                                     <div class="learning__text3">Как стать продавцом?</div>
+                                 </a>
+                             </div>
+                             <a href="btc.html" class="learning__btn">Подробное руководство</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- _______________________Основа сайта_______________________ -->
+        @@include("_footer.html")
+    </div>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+@keyframes dash-outer {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash-inner {
+    60% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: var(--color-white);
+        stroke-dashoffset: 0;
+    }
+}

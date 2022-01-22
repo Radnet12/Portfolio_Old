@@ -1,0 +1,102 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.main {
+    background-image: url("../../img/main-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70px;
+    min-height: 300px;
+    height: 100vh;
+    margin-top: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__offer {
+        max-width: 850px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__search {
+        position: relative;
+        width: 100%;
+
+        input {
+            border-radius: calc(var(--border-radius) * 3);
+            padding: 12px 100px 12px 15px;
+            width: 100%;
+        }
+    }
+    &__title {
+        @include adaptiv-font(50, 25);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+.search__btn {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    border-radius: calc(var(--border-radius) * 3);
+    padding: 0 25px;
+    height: 100%;
+    background-color: #0bc8ce;
+    transition: background-color 0.3s;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: #007aff;
+            transition: background-color 0.3s;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        .search__btn_tooltip {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    }
+
+    &_tooltip {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        border-radius: var(--border-radius);
+        padding: 7px 15px;
+        color: var(--color-white);
+        background-color: var(--color-actions);
+        backdrop-filter: blur(5px);
+        transform: translateX(-50%);
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+
+        @media (max-width: 1200px) {
+            left: -20%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 6px 6px 6px;
+            border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent;
+            transform: translateX(-50%);
+
+            @media (max-width: 1200px) {
+                left: 83%;
+            }
+        }
+    }
+}

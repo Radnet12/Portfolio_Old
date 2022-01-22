@@ -1,0 +1,43 @@
+.footer {
+    height: 116px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @media (max-width: 590px) {
+        margin-top: 30px;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        @media (max-width: 590px) {
+            display: block;
+            text-align: center;
+		}
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        max-width: 340px;
+        width: 100%;
+        @media (max-width: 590px) {
+            margin: 0 auto;
+            margin-bottom: 15px;
+		}
+    }
+    &__rights {
+        margin-left: 3.6%;
+        font-family: 'Segoi';
+        font-weight: 400;
+        a {
+        font-size: 14px;
+        line-height: 19px;
+        color: #797979;
+        transition: color 0.3s ease;
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}

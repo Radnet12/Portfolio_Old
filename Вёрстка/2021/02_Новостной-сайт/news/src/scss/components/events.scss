@@ -1,0 +1,95 @@
+.events {
+    margin-bottom: 85px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 65px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+        border: 1px solid var(--clr-ui-border);
+        text-align: center;
+    }
+
+    &__item {
+        position: relative;
+        flex: 0 1 33.333%;
+        padding: 134px 30px 30px;
+
+        &:not(:nth-child(3n)) {
+            border-right: 1px solid var(--clr-ui-border);
+
+            @media (max-width: 768px) {
+                border-right: none;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 89px;
+            height: 89px;
+            background-image: url("../img/ui/title-star.svg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 992px) {
+            padding: 134px 20px 20px;
+        }
+
+        &--reverse {
+            padding: 30px 30px 134px;
+
+            &::before {
+                top: auto;
+                bottom: 30px;
+
+                @media (max-width: 768px) {
+                    top: 30px;
+                    bottom: auto;
+                }
+            }
+
+            @media (max-width: 992px) {
+                padding: 20px 20px 134px;
+            }
+
+            @media (max-width: 768px) {
+                padding: 134px 20px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            flex: 0 1 100%;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--clr-ui-border);
+            }
+        }
+    }
+
+    &__item-date {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: var(--clr-neutral-800);
+    }
+
+    &__item-title {
+        @include adaptiv-value("font-size", 20, 18, 1);
+
+        margin-bottom: 10px;
+    }
+
+    &__item-info {
+        margin-bottom: 15px;
+        line-height: 130%;
+    }
+}

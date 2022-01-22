@@ -1,0 +1,64 @@
+.main {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../img/main/main__bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &__wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__inner{
+        background: rgba(88, 88, 88, 0.4);
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 0px 8px 20px 8px;
+    }
+    &__title {
+        font-family: 'RobotoCondensed', sans-serif;
+        font-weight: 700;
+        @include adaptiv-font(100,48);
+        color: var(--color-white);
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        span {
+            color: transparent;
+            padding-right: 15px;
+            -webkit-text-stroke: 3px #fff;
+            @media (max-width: 992px) {
+                -webkit-text-stroke: 1px #fff;
+                padding-right: 5px;
+            }
+        }
+        @media (max-width: 992px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+        cursor: pointer;
+        animation: bounceArrow 2.5s infinite;
+        @keyframes bounceArrow {
+            0%{
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0px);
+            } 
+            100% {
+                transform: translateY(-10px);
+            } 
+        }
+        svg {
+           height: 20px;
+           width: 20px;
+           fill: var(--color-white);
+        }
+    }
+}

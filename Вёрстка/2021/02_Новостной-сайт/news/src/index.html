@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Week - Main page</title>
+
+    <meta name="description" lang="en" content="Music Week - a website where you can find the latest news about music">
+
+    <!-- <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image:src" content=""> -->
+
+    <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        @include("./html/ui/header.html")
+            <main>
+                @include("./html/index.html")
+                @include("./html/latest.html")
+                @include("./html/charts.html")
+                @include("./html/events.html")
+            </main>
+        @include("./html/ui/footer.html")
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

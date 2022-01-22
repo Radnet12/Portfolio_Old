@@ -1,0 +1,112 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.btn {
+    padding: 1.8em 5.6em;
+    font-size: 16px;
+    color: var(--color-white);
+    background-color: var(--color-casal);
+    transition: background-color 0.5s;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: var(--color-hovered);
+            transition: background-color 0.5s;
+        }
+    }
+
+    @media (max-width: 768px) {
+        @include adaptiv-font(16, 12);
+    }
+}
+
+.section {
+    &__padding {
+        @include adaptiv-value(padding-top, 50, 30, 1);
+        @include adaptiv-value(padding-bottom, 50, 30, 1);
+    }
+
+    &__title {
+        @include adaptiv-font(32,25);
+
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+.clean .swiper-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1480px;
+}
+
+.clean .swiper-slide {
+    position: relative;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.container .swiper-button-prev,
+.container .swiper-button-next {
+    width: 50px;
+    height: 50px;
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(25px);
+}
+
+.container .swiper-button-prev {
+    background-image: url('../img//decorations//arrow-left.svg');
+
+    &::after {
+        display: none;
+    }
+}
+
+.container .swiper-button-next {
+    background-image: url('../img//decorations//arrow-right.svg');
+
+    &::after {
+        display: none;
+    }
+}
+
+.feedback .container {
+    position: relative;
+}
+
+.feedback__slider {
+    @include adaptiv-value(padding-top, 50, 30, 1);
+}
+
+.feedback .swiper-slide {
+    width: 100%;
+    max-width: 880px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.service__page {
+    .maintain__wrapper {
+        @include adaptiv-value(padding-top, 50, 30, 1);
+    }
+
+    .item-maintain__row {
+        margin-top: 25px;
+    }
+}

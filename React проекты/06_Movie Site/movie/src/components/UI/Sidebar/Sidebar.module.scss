@@ -1,0 +1,108 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 20px 15px;
+    border-radius: 10px;
+
+    @media (max-width: 992px) {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    &_close {
+        .sidebar__item {
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
+        .sidebar__title {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            &::after {
+                transform: rotate(45deg);
+                transition: transform 0.3s;
+            }
+        }
+    }
+}
+
+.sidebar__item {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+.sidebar__title {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        width: 8px;
+        height: 8px;
+        border-top: 3px solid var(--color-black);
+        border-right: 3px solid var(--color-black);
+        transform: rotate(135deg);
+        transition: transform 0.3s;
+    }
+}
+
+.sidebar__subtitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: 5px;
+}
+
+.sidebar__list {
+    padding-top: 10px;
+
+    &_item {
+        border-bottom: 1px solid rgb(231, 231, 231);
+        margin-left: -15px;
+        width: calc(100% + 30px);
+        transition: background-color 0.3s ease;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @media (min-width: 992px) {
+            &:focus,
+            &:hover {
+                background-color: var(--color-header);
+                transition: background-color 0.3s ease;
+
+                .sidebar__link {
+                    color: var(--color-white);
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+        .sidebar__link {
+            display: block;
+            padding: 10px 15px;
+            color: var(--color-black);
+            transition: color 0.3s ease;
+
+            &_active {
+                color: var(--color-white);
+                background-color: var(--color-header);
+            }
+        }
+    }
+}

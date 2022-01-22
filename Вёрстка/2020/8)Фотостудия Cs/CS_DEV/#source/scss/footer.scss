@@ -1,0 +1,109 @@
+.footer {
+    background: #362400;
+    padding: 53px 0;
+    font-size: 20px;
+    @media (max-width: 768px) {
+        padding: 25px 0;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @media (max-width: 992px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        @media (max-width: 768px) {
+            img {
+                height: 50px;
+            }
+        }
+        @media (max-width: 576px) {
+            img {
+                height: 20px;
+            }
+        }
+    }
+
+    &__nav {
+        margin-left: 5.658%;
+        @media (max-width: 1785px) {
+            margin-left: 30px;
+        }
+        @media (max-width: 992px) {
+            display: none;
+        }
+        ul {
+            display: flex;
+            @media (max-width: 1400px) {
+                flex-direction: column;
+            }
+            li {
+                margin-right: 52px;
+                padding-bottom: 10px;
+                &:last-child {
+                    margin-right: 0;
+                    padding-bottom: 0;
+                }
+                a {
+                    color: #fff;
+                    display: inline-block;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        display: block;
+                        background-color: #fff;
+                        width: 0%;
+                        height: 3px;
+                        margin: 8px auto 0 auto;
+                        position: absolute;
+                        left: 50%;
+                        transition: width 0.3s ease-in-out;
+                        transform: translateX(-50%);
+                    }
+                    &:hover::after {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-weight: 700;
+        color: #fff;
+        margin-left: 12.9%;
+        @media (max-width: 1785px) {
+            margin-left: 50px;
+        }
+        @media (max-width: 992px) {
+            margin-left: 0;
+        }
+        @media (max-width: 576px) {
+            font-size: 10px;
+        }
+    }
+
+    &__content-social {
+        margin-left: 13.5%;
+        @media (max-width: 1785px) {
+            margin-left: 50px;
+        }
+        @media (max-width: 992px) {
+            margin-left: 0;
+        }
+        svg {
+            margin-right: 34px;
+            &:last-child{
+                margin-right: 0;
+            }
+            @media (max-width: 576px) {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

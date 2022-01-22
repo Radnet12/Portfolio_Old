@@ -1,0 +1,185 @@
+.header {
+    position: fixed;
+    z-index: 3;
+    font-size: 20px;
+    height: 83px;
+    width: 100%;
+    padding-top: 11px;
+    transition: all 0.7s ease;
+    
+    &__wrapper {
+        max-width: 1228px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav {
+        margin-top: 17px;
+        height: 37px;
+        &-right{
+            @media (max-width:1100px) {
+                display: none;
+            }
+        }
+        @media (max-width:1100px) {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background: rgba(121, 94, 41, 0.85);
+            margin-top: 0;
+            padding: 0 20px;
+            overflow: auto;
+            transition: all 0.3s ease;
+            &.active {
+                right: 0;
+            }
+        }
+    }
+    &__nav ul{
+        display: flex;
+        justify-content: space-between;
+        @media (max-width:1100px) {
+            display: block;
+            margin-top: 80px;
+            &::before {
+                content: '';
+                display: block;
+                max-width: 352px;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                margin-bottom: 50px;
+            }
+        }
+        @media (max-width:576px) {
+            margin-top: 50px;
+        }
+        li {
+            margin-right: 52px;
+            &:last-child {
+                margin-right: 0;
+            }
+            @media (max-width:1100px) {
+                margin-right: 0;
+                margin-bottom: 30px;
+                font-size: 40px;
+                line-height: 55px;
+            }
+            @media (max-width:576px) {
+                font-size: 35px;
+                margin-bottom: 20px;
+            }
+        }
+        li a {
+            color: #fff;
+            display: inline-block;
+            position: relative;
+            @media(min-width:922px) {
+                &::after {
+                content: "";
+                display: block;
+                background-color: #fff;
+                width: 0%;
+                height: 3px;
+                margin: 8px auto 0 auto;
+                position: absolute;
+                left: 50%;
+                transition: width .3s ease-in-out;
+                transform:translateX(-50%);
+            }
+            }
+            @media (min-width:992px) {
+                &:hover::after{
+                    width: 80%;
+                }
+            }
+        }
+    }
+    &__logo {
+        @media (max-width: 768px) {
+            img {
+                height: 50px;
+            }
+        }
+        @media (max-width: 576px) {
+            img {
+                height: 20px;
+            }
+        }
+    }
+    &__tel a {
+        font-weight: 700;
+        color: #fff;
+        @media (max-width: 576px) {
+            font-size: 12px;
+        }
+    }
+    &__burger {
+        display: none;
+        @media (max-width: 1100px) {
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 20px;
+            @media (max-width: 576px) {
+                width: 23px;
+                height: 12px;
+            }
+            span {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                top: 50%;
+                transition: all 0.3s ease;
+            }
+            &::before,
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+            &::before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+            &.active {
+                span {
+                    transform: scale(0);
+                }
+                &::before {
+                    transform: rotate(-45deg);
+                    top: 9px;
+                    @media (max-width: 576px) {
+                        top: 5px;
+                    }
+                }
+                &::after {
+                    transform: rotate(45deg);
+                    bottom: 10px;
+                    @media (max-width: 576px) {
+                        bottom: 6px;
+                    }
+                }
+            }
+        }
+    }
+    &.header__active {
+        transition: all 0.7s ease;
+        background-color: #362400;
+        @media (max-width: 576px) {
+            height: 42px;
+        }
+    }
+}

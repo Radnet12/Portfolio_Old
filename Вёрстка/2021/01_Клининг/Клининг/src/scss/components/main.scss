@@ -1,0 +1,100 @@
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../img/main/main.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 870px;
+        text-align: center;
+    }
+
+    &__title {
+        @include adaptiv-font(75, 25);
+
+        margin-bottom: 0.55em;
+    }
+
+    &__subtitle {
+        @include adaptiv-font(20, 14);
+
+        margin-bottom: 1.4em;
+    }
+}
+
+.banner {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(#205b59, 0.8);
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 70px;
+        max-width: 768px;
+
+        @media (max-width: 1540px) {
+            padding: 10px 110px;
+        }
+
+        @media (max-width: 576px) {
+            padding: 10px 15px;
+        }
+    }
+
+    &__text {
+        @include adaptiv-font(24, 10);
+
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    svg {
+        flex: 0 0 auto;
+        width: 120px;
+        height: auto;
+        fill: transparent;
+
+        @media (max-width: 1540px) {
+            width: 70px;
+        }
+
+        @media (max-width: 576px) {
+            width: 30px;
+        }
+
+        .circle-outer {
+            stroke: var(--color-white);
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: dash-outer 7s linear forwards;
+        }
+
+        .circle-inner {
+            fill: transparent;
+            stroke: var(--color-white);
+            stroke-dasharray: 282;
+            stroke-dashoffset: 282;
+            animation: dash-inner 6s linear forwards;
+        }
+
+        .svg-arrow {
+            fill: var(--color-hovered);
+            stroke: var(--color-hovered);
+        }
+    }
+}

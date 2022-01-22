@@ -1,0 +1,115 @@
+.contact {
+    .container {
+        @media (max-width: 1540px) {
+            padding: 0;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 440px;
+        color: var(--color-white);
+        background-image: url('../img/contact/contact-bg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (max-width: 1540px) {
+            padding: 85px 15px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        margin-bottom: 50px;
+        max-width: 455px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    &__form {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1426px;
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width: 1540px) {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1540px) {
+            width: 100%;
+            max-width: 545px;
+        }
+    }
+
+    &__input {
+        position: relative;
+
+        @media (max-width: 1540px) {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        input {
+            border-radius: 5px;
+            padding: 32px 65px 32px 16px;
+            width: 515px;
+            font-size: 20px;
+            background-color: var(--color-white);
+
+            &::placeholder {
+                color: rgba(0,0,0, 0.5);
+            }
+
+            @media (max-width: 1540px) {
+                width: 100%;
+            }
+
+            @media (max-width: 576px) {
+                padding: 20px 65px 20px 16px;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 27px;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+
+            @media (max-width: 576px) {
+                right: 16px;
+            }
+        }
+
+        &:nth-child(1) {
+            &::before {
+                background-image: url('../img/contact/person.svg');
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                background-image: url('../img/contact/phone.svg');
+            }
+        }
+    }
+}

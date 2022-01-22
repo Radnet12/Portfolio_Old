@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Настройка viewport -->
+    <title>BITService</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include("_header.html")
+        <!-- _______________________Основа сайта_______________________ -->
+        <section class="verification">
+            <div class="container">
+                <div class="verification__wrapper wrap wrap__class">
+                    <h2 class="title">Заявка на верификацию аккаунта</h2>
+                    <div class="verification__descr">
+                        <ul>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                            <li>Vel exercitationem cupiditate aperiam fugiat fugit beatae!</li>
+                            <li>Obcaecati cupiditate perferendis minima quibusdam repellat vitae?</li>
+                            <li>Ullam repellendus tenetur dolorem officiis fuga? Eaque.</li>
+                            <li>Veniam, soluta debitis iste laboriosam doloremque eveniet.</li>
+                        </ul>
+                    </div>
+                    <div class="verification__form">
+                        <form method="POST">
+                            <input type="email" name="mail" placeholder="E-mail">
+                            <input type="text" name="name" placeholder="Name">
+                            <input type="text" name="surname" placeholder="Surname">
+                            <input type="text" name="id" placeholder="ID (Внутри бота)">
+                            <input type="text" name="passport" placeholder="Passport series and number">
+                            <input type="file" id="upload1">
+                            <label for="upload1">Загрузить файл</label>
+                            <input type="file" id="upload2">
+                            <label for="upload2">Загрузить файл</label>
+                            <div class="btn verification__btn">
+                                <button action="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- _______________________Основа сайта_______________________ -->
+        @@include("_footer.html")
+    </div>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>
